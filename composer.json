@@ -1,0 +1,30 @@
+{
+  "name": "reindert-vetter/laraveldocumentor",
+  "version": "v0.1",
+  "description": "Generates Swagger Documentation (REST API in the OpenAPI format)",
+  "tags": ["Swagger", "REST API", "API", "OpenAPI"],
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Reindert Vetter",
+      "role": "Developer"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reindert-vetter/laraveldocumentor"
+  },
+  "bugs": {
+    "url": "https://github.com/reindert-vetter/laraveldocumentor/issues"
+  },
+  "require": {
+    "php": "~7.0",
+    "laravel/framework": "^4.1 || ^5.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.5"
+  },
+  "autoload": {
+    "psr-4": {"ReindertVetter\\LaravelDocumentor\\": "src/"}
+  }
+}
