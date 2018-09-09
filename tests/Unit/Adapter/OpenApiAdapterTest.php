@@ -13,7 +13,7 @@ class OpenApiAdapterTest extends TestCase
     public function test_uri()
     {
         $request = (new Faker\Request([]))->setPath();
-        $response = new \Illuminate\Http\Response();
+        $response = new Response();
         $result = (new OpenApiAdapter($request, $response))->get();
 
         $this->assertArrayHasKey('paths', $result);
@@ -24,7 +24,7 @@ class OpenApiAdapterTest extends TestCase
     public function test_uri_and_get_method()
     {
         $request = (new Faker\Request([]))->setPath();
-        $response = new \Illuminate\Http\Response();
+        $response = new Response();
         $result = (new OpenApiAdapter($request, $response))->get();
 
         $this->assertArrayHasKey('get', array_get($result, 'paths./pet'));
@@ -34,7 +34,7 @@ class OpenApiAdapterTest extends TestCase
     {
         $request = (new Faker\Request([]))->setPath();
         $request->setMethod('post');
-        $response = new \Illuminate\Http\Response();
+        $response = new Response();
         $result = (new OpenApiAdapter($request, $response))->get();
 
         $this->assertArrayHasKey('post', array_get($result, 'paths./pet'));
@@ -43,7 +43,7 @@ class OpenApiAdapterTest extends TestCase
     public function test_one_parameter()
     {
         $request = (new Faker\Request([]))->setPath('pet', 'status=sold');
-        $response = new \Illuminate\Http\Response();
+        $response = new Response();
         $result = (new OpenApiAdapter($request, $response))->get();
 
         $this->assertInternalType('array', array_get($result, 'paths./pet.get.parameters'));
@@ -52,7 +52,7 @@ class OpenApiAdapterTest extends TestCase
     public function test_status_ok()
     {
         $request = (new Faker\Request([]))->setPath();
-        $response = new \Illuminate\Http\Response('', Response::HTTP_OK);
+        $response = new Response('', Response::HTTP_OK);
         $result = (new OpenApiAdapter($request, $response))->get();
 
         $this->assertArrayHasKey(200, array_get($result, 'paths./pet.get.responses'));

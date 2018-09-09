@@ -1,6 +1,5 @@
 <?php declare(strict_types=1);
 
-use LaravelDocumentor\Service\OpenApiParameterService;
 use LaravelDocumentor\Service\OpenApiRequestBodyService;
 use PHPUnit\Framework\TestCase;
 

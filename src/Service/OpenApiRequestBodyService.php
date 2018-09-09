@@ -23,13 +23,20 @@ class OpenApiRequestBodyService extends DataInterface
      * OpenApiQueryService constructor.
      * @param Request $request
      */
-    public function __construct(Request $request){
+    public function __construct(Request $request)
+    {
         $this->request = $request;
     }
 
+    /**
+     * @return array
+     */
     public function get(): array
     {
         $resultContent = [];
+        /**
+         * @todo content == string !!!
+         */
         $requestContent = $this->request->getContent();
 
         if (empty($requestContent)) {

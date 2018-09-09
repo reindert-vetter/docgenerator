@@ -6,7 +6,6 @@
 
 namespace LaravelDocumentor\Entity;
 
-
 use LaravelDocumentor\Contract\OpenApiArrayInterface;
 
 class RequestBody implements OpenApiArrayInterface
@@ -27,7 +26,9 @@ class RequestBody implements OpenApiArrayInterface
 
     public function toOpenApi(): array
     {
-        $data = array_add([], 'content.application/json.schema',
+        $data = array_add(
+            [],
+            'content.application/json.schema',
             [
                 'type' => 'object',
                 'properties' => $this->getProperties($this->content),
@@ -38,7 +39,7 @@ class RequestBody implements OpenApiArrayInterface
     }
 
     /**
-     * @param array|string $data
+     * @param array|object|string $data
      * @return array
      */
     private function getProperties($data)

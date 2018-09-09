@@ -69,7 +69,7 @@ class Parameter implements OpenApiArrayInterface
             'type' => "string",
         ];
 
-        if ($this->items) {
+        if (! empty($this->items)) {
             $data['items'] = $this->items;
             $data['collectionFormat'] = $this->collectionFormat = "multi";
         }

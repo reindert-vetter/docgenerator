@@ -11,8 +11,6 @@ use Closure;
  */
 class DocumentRequest extends ServiceProvider
 {
-    use Logger;
-
     /**
      * Create a new service provider instance.
      *
@@ -39,8 +37,7 @@ class DocumentRequest extends ServiceProvider
      * @param $request
      * @param $response
      */
-    public function terminate(\Illuminate\Http\LaravelRequest $request, \Illuminate\Http\Response $response)
+    public function terminate(\Illuminate\Http\Request $request, \Illuminate\Http\Response $response)
     {
-        
     }
 }
