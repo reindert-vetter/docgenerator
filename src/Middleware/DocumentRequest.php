@@ -2,7 +2,6 @@
 
 namespace ReindertVetter\LaravelDocumentor\Middleware;
 
-use Base\Logger;
 use \Illuminate\Support\ServiceProvider;
 use Closure;
 
@@ -42,7 +41,6 @@ class DocumentRequest extends ServiceProvider
      */
     public function terminate(\Base\HTTP\LaravelRequest $request, \Illuminate\Http\Response $response)
     {
-        $this->info("jaaaaaaaaaaaaa", [$request, $response]);
-//        exit('hoi jaaa');
+        
     }
 }
